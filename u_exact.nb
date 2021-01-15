@@ -1,0 +1,138 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      4928,        130]
+NotebookOptionsPosition[      4290,        111]
+NotebookOutlinePosition[      4623,        126]
+CellTagsIndexPosition[      4580,        123]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{
+    RowBox[{"Sin", "[", 
+     RowBox[{"2", "*", "Pi", "*", "x"}], "]"}], "*", 
+    RowBox[{"Exp", "[", "t", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"q", "=", 
+   RowBox[{"1", "+", "x"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ut", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"u", ",", "t"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ux", "=", 
+   RowBox[{"D", "[", 
+    RowBox[{"u", ",", "x"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "=", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"ut", ",", "t"}], "]"}], "-", 
+     RowBox[{"D", "[", 
+      RowBox[{"ux", ",", "x"}], "]"}], "-", 
+     RowBox[{"q", " ", "u"}]}]}], ";"}], "\[IndentingNewLine]"}], "\n", 
+ RowBox[{
+  RowBox[{"CFormTweaked", "[", "xp_", "]"}], ":=", 
+  RowBox[{"ToLowerCase", "[", 
+   RowBox[{"ToString", "[", 
+    RowBox[{"CForm", "[", 
+     RowBox[{"FullSimplify", "[", "xp", "]"}], "]"}], "]"}], 
+   "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"print", "[", 
+    RowBox[{"name_", ",", "xp_"}], "]"}], ":=", 
+   RowBox[{"name", "<>", "\"\< = lambda t, x: \>\"", "<>", 
+    RowBox[{"CFormTweaked", "[", "xp", "]"}], "<>", "\"\<\\n\>\""}]}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"StringJoin", "[", 
+  RowBox[{"MapThread", "[", 
+   RowBox[{"print", ",", 
+    RowBox[{"{", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<u\>\"", ",", "\"\<f\>\"", ",", "\"\<ut\>\"", ",", "\"\<ux\>\"", 
+        ",", "\"\<q\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"u", ",", "f", ",", "ut", ",", "ux", ",", "q"}], "}"}]}], 
+     "\[IndentingNewLine]", "}"}]}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.800608966689838*^9, 3.800609059692294*^9}, {
+   3.8006091038979883`*^9, 3.800609134648868*^9}, {3.800609176577231*^9, 
+   3.800609301114319*^9}, {3.800609667976246*^9, 3.800609671308793*^9}, {
+   3.800674841655376*^9, 3.800674883546506*^9}, {3.800675061019446*^9, 
+   3.8006751207655773`*^9}, {3.800675653924654*^9, 3.8006756814418364`*^9}, {
+   3.8006757159659777`*^9, 3.800675717416944*^9}, {3.8006757640530643`*^9, 
+   3.80067576440409*^9}, {3.8006758592830067`*^9, 3.800675888872569*^9}, {
+   3.800676055066103*^9, 3.800676061867976*^9}, {3.809754304612852*^9, 
+   3.809754307233954*^9}, 
+   3.809754788985553*^9},ExpressionUUID->"b316df8e-e4b6-4fbf-967e-\
+8a0f80179207"],
+
+Cell[BoxData["\<\"u = lambda t, x: power(e,t)*sin(2*pi*x)\\nf = lambda t, x: \
+power(e,t)*(1 + 4*power(pi,2))*sin(2*pi*x)\\nut = lambda t, x: \
+power(e,t)*sin(2*pi*x)\\nux = lambda t, x: 2*power(e,t)*pi*cos(2*pi*x)\\nq = \
+lambda t, x: 0\\n\"\>"], "Output",
+ CellChangeTimes->{
+  3.8006748857213717`*^9, 3.800675071457531*^9, {3.80067510844818*^9, 
+   3.8006751217169743`*^9}, {3.800675657791849*^9, 3.800675683040991*^9}, 
+   3.800675718755206*^9, 3.800675770832634*^9, 3.8006758611844482`*^9, 
+   3.800675905895133*^9, {3.800676063786767*^9, 3.800676066168673*^9}, 
+   3.809754205488723*^9, 3.8097543076054792`*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"106e7c77-597c-466c-ba19-a2c7b525121c"]
+}, Open  ]],
+
+Cell["To use the above Python functions you need to use ", "Text",
+ CellChangeTimes->{{3.80067593296946*^9, 3.800675957950416*^9}, {
+  3.80067598944694*^9, 
+  3.800676003757*^9}},ExpressionUUID->"88361637-e98b-47ae-b4ae-9054773f1664"],
+
+Cell["from numpy import sin, cos, power, pi, e", "ExternalLanguage",
+ InitializationCell->False,
+ CellChangeTimes->{{3.800676005009375*^9, 3.800676021924446*^9}, 
+   3.8097542257887583`*^9},ExpressionUUID->"09d04ba1-e847-4e64-9b41-\
+a062dca43ca0"]
+},
+WindowSize->{956, 1043},
+WindowMargins->{{6, Automatic}, {2, Automatic}},
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 2508, 63, 308, "Input",ExpressionUUID->"b316df8e-e4b6-4fbf-967e-8a0f80179207"],
+Cell[3091, 87, 696, 10, 151, "Output",ExpressionUUID->"106e7c77-597c-466c-ba19-a2c7b525121c"]
+}, Open  ]],
+Cell[3802, 100, 234, 3, 35, "Text",ExpressionUUID->"88361637-e98b-47ae-b4ae-9054773f1664"],
+Cell[4039, 105, 247, 4, 51, "ExternalLanguage",ExpressionUUID->"09d04ba1-e847-4e64-9b41-a062dca43ca0",
+ InitializationCell->False]
+}
+]
+*)
+
